@@ -1,6 +1,6 @@
 var _ = require('lodash'),
 	rand = require('./rand').rand,
-	repeatedly = require('../util/chapter6').repeatedly;
+	repeatedly = require('../util/chapter5').repeatedly;
 
 function generateRandomCharacter() {
 	return rand(26).toString(36);

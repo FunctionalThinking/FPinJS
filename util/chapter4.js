@@ -1,31 +1,30 @@
 var _ = require('lodash'),
 	existy = require('./chapter1').existy,
-	fail = require('./chapter1').fail
-	doWhen = require('./chapter1').doWhen;
+	construct = require('./chapter2').construct,
+	invoker = require('./chapter4').invoker;
 
-function always(VALUE) {
-	return function() {
-		return VALUE;
-	};
-}
+function dispatch() {
+	var funs = _.toArray(arguments);
+	var size = funs.length;
 
-function repeatedly(times, fun) {
-	return _.map(_.range(times), fun);
-}
-
-function invoker(NAME, METHOD) {
 	return function(target) {
-		if (!existy(target)) fail("Must provide a target");
-
-		var targetMethod = target[NAME];
+		var ret = undefined;
 		var args = _.rest(arguments);
 
-		return doWhen((existy(targetMethod) && METHOD === targetMethod), function() {
-			return targetMethod.apply(target, args);
-		});
+		for (var funIndex = 0; funIndex < size; funIndex++) {
+			var fun = funs[funIndex];
+			ret = fun.apply(fun, construct(target, args));
+
+			if (existy(ret)) return ret;
+		}
+
+		return ret;
 	};
 }
 
-exports.always = always;
-exports.repeatedly = repeatedly;
-exports.invoker = invoker;
+var str = dispatch(
+	invoker('toString', Array.prototype.toString),
+	invoker('toString', String.prototype.toString)
+);
+
+exports.str = str;

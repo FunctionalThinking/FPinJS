@@ -1,30 +1,21 @@
 var _ = require('lodash'),
-	existy = require('./chapter1').existy,
-	construct = require('./chapter2').construct,
-	invoker = require('./chapter4').invoker;
+	cat = require('./etc').cat,
+	construct = require('./etc').construct,
+	always = require('./chapter3').always,
+	repeatedly = require('./chapter3').repeatedly,
+	invoker = require('./chapter3').invoker;
+	str = require('./chapter4').str;
 
-function dispatch() {
-	var funs = _.toArray(arguments);
-	var size = funs.length;
+// etc
+exports.cat = cat;
+exports.construct = construct;
 
-	return function(target) {
-		var ret = undefined;
-		var args = _.rest(arguments);
 
-		for (var funIndex = 0; funIndex < size; funIndex++) {
-			var fun = funs[funIndex];
-			ret = fun.apply(fun, construct(target, args));
+// chapter 3
+exports.always = always;
+exports.repeatedly = repeatedly;
+exports.invoker = invoker;
 
-			if (existy(ret)) return ret;
-		}
 
-		return ret;
-	};
-}
-
-var str = dispatch(
-	invoker('toString', Array.prototype.toString),
-	invoker('toString', String.prototype.toString)
-);
-
+// chapter 4
 exports.str = str;

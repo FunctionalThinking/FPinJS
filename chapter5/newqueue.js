@@ -1,5 +1,5 @@
 var _ = require('lodash'),
-	invoker = require('../util/chapter6').invoker,
+	invoker = require('../util/chapter5').invoker,
 	SaferQueue = require('./saferqueue').SaferQueue;
 
 // problem: forgot new

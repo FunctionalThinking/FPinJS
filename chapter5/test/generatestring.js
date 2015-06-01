@@ -1,5 +1,5 @@
 var generateString = require('../generatestring').generateString,
-	always = require('../../util/chapter6').always;
+	always = require('../../util/chapter5').always;
 
 describe("generateString", function() {
 	var result = generateString(always("a"), 10);

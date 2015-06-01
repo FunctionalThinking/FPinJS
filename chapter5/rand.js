@@ -1,5 +1,5 @@
 var _ = require('lodash'),
-	repeatedly = require('../util/chapter6').repeatedly;
+	repeatedly = require('../util/chapter5').repeatedly;
 
 var rand = _.partial(_.random, 1, _, false);
 

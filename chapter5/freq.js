@@ -1,5 +1,5 @@
 var _ = require('lodash'),
-	repeatedly = require('../util/chapter6').repeatedly,
+	repeatedly = require('../util/chapter5').repeatedly,
 	rand = require('./rand').rand;
 
 var freq = _.curryRight(_.countBy)(_.identity)(null);

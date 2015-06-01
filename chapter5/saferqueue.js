@@ -1,6 +1,6 @@
 var _ = require('lodash'),
-	cat = require('../util/chapter6').cat,
-	str = require('../util/chapter6').str;
+	cat = require('../util/chapter5').cat,
+	str = require('../util/chapter5').str;
 
 var SaferQueue = function(elems) {
 	this._q = _.clone(elems);

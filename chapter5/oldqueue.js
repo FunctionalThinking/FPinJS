@@ -1,5 +1,5 @@
 var _ = require('lodash'),
-	cat = require('../util/chapter6').cat;
+	cat = require('../util/chapter5').cat;
 
 function Queue(elems) {
 	this._q = elems;

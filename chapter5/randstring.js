@@ -1,6 +1,6 @@
 var _ = require('lodash'),
 	rand = require('./rand').rand,
-	repeatedly = require('../util/chapter6').repeatedly;
+	repeatedly = require('../util/chapter5').repeatedly;
 
 function randString(len) {
 	var ascii = repeatedly(len, _.partial(rand, 35));

@@ -1,17 +1,8 @@
-var _ = require('lodash'),
-	existy = require('./chapter1').existy;
+var _ = require('lodash');
 
-function cat() {
-	var head = _.first(arguments);
-	if (existy(head))
-		return head.concat.apply(head, _.rest(arguments));
-	else
-		return [];
+function average(array) {
+	var sum = _.reduce(array, function (a, b) { return a + b; });
+	return sum / _.size(array);
 }
 
-function construct(head, tail) {
-	return cat([head], _.toArray(tail));
-}
-
-exports.cat = cat;
-exports.construct = construct;
+exports.average = average;
