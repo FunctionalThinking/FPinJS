@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 function plucker(FIELD) {
 	return function(obj) {
 		return (obj && obj[FIELD]);
