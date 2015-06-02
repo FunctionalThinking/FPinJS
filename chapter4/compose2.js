@@ -2,7 +2,7 @@
 Chapter3: Function Composition
 */
 
-var _ = require('underscore')
+var _ = require('lodash')
 
 function compose(fn1, fn2) {
   return function() {
