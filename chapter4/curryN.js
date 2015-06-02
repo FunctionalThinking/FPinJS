@@ -2,7 +2,7 @@
 Chapter3: Currying
 */
 
-var _ = require('underscore');
+var _ = require('lodash');
 
 function curryN(fun) {
   var argsLength = fun.length;

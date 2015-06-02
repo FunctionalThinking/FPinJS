@@ -12,7 +12,7 @@ function composeN() {
 }
 */
 
-var _ = require('underscore')
+var _ = require('lodash')
 
 function composeN() {
   var fs = _.toArray(arguments).reverse()
