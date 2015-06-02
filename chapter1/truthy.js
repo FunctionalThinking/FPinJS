@@ -2,16 +2,16 @@ var existy = require('./existy').existy;
 
 function truthy(x) { return (x !== false) && existy(x) };
 
-truthy(false);
+console.log(truthy(false));
 //=> false
 
-truthy(undefined);
+console.log(truthy(undefined));
 //=> false
 
-truthy(0);
+console.log(truthy(0));
 //=> true
 
-truthy('');
+console.log(truthy(''));
 //=> true
 
 exports.truthy = truthy;

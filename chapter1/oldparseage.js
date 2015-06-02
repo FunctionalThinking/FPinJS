@@ -15,11 +15,11 @@ function parseAge(age) {
 	return a;
 }
 
-parseAge("42");
+console.log(parseAge("42"));
 // (console) Attempting to parse an age
 //=> 42
 
-parseAge(42);
+// parseAge(42);
 //=> Error: Expecting a string
 
 parseAge("frob");

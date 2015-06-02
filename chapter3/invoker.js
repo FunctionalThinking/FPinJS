@@ -1,22 +1,5 @@
-var _ = require('lodash');
-var repeatedly = require('./iterateUntil').repeatedly;
-
-function always(VALUE) {
-	return function() {
-		return VALUE;
-	}
-}
-
-var f = always(function() {});
-f() === f();
-//=> true
-
-var g = always(function() {});
-f() === g();
-//=> false
-
-repeatedly(3, always("Odelay!"));
-//=> ["Odelay!", "Odelay!", "Odelay!"]
+var _ = require('lodash'),
+	existy = require('./util/chapter1').existy;
 
 function invoker(NAME, METHOD) {
 	return function(target) {
