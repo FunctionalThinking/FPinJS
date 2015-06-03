@@ -1,5 +1,11 @@
 var _ = require('lodash');
 
+function plucker(FIELD) {
+    return function(obj) {
+        return (obj && obj[FIELD]);
+    };
+}
+
 _.max([1, 2, 3, 4, 5]);
 //=> 5
 
@@ -12,27 +18,28 @@ _.max(people, function(p) { return p.age; });
 
 function finder(valueFun, bestFun, coll) {
 	return _.reduce(coll, function(best, current) {
-		var bestValue = bestFun(best);
-		var currentValue = bestFun(current);
-		return (bestValue === bestFun(bestValue, currentValue)) ? bestValue : current;
+		var bestValue = valueFun(best);
+		var currentValue = valueFun(current);
+		return (bestValue === bestFun(bestValue, currentValue)) ? best : current;
 	});
 }
 
-finder(_.identify, Math.max, [1, 2, 3, 4, 5]);
+finder(_.identity, Math.max, [1, 2, 3, 4, 5]);
 finder(plucker('age'), Math.max, people);
 //=> {name: "Fred", age: 65}
 
 finder(
 	plucker('name'),
-	function(x, y) { return (x.chartAt(0) === "L") ? x : y; },
+	function(x, y) { return (x.charAt(0) === "L") ? x : y; },
 	people
 	);
 //=> {name: "Lucy", age: 36}
 
 function best(fun, coll) {
-	return _.reduce(coll, function(x, y) {
-		return fun(x, y) ? x : y;
-	})
+    return _.reduce(coll, function (x, y) {
+        return fun(x, y) ? x : y;
+    });
+}
 
 best(function(x, y) { return x > y; }, [1, 2, 3, 4, 5]);
 //=> 5

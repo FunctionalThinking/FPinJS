@@ -2,7 +2,7 @@
 Chapter3: Partial Application
 */
 
-var _ = require('underscore')
+var _ = require('lodash')
 
 function partialN(fn) {
   var pargs = _.rest(arguments)

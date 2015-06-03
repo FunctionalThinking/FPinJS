@@ -2,7 +2,7 @@
 Chapter3: Partial Application
 */
 
-var _ = require('underscore')
+var _ = require('lodash')
 
 function partial2(fn, a, b) {
   return function() {
