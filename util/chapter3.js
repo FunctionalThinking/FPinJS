@@ -26,6 +26,17 @@ function invoker(NAME, METHOD) {
 	};
 }
 
+function complement(PRED) {
+	return function() {
+		return !PRED.apply(null, _.toArray(arguments));
+	};
+}
+
+function isEven(n) { return (n%2) === 0 };
+var isOdd = complement(isEven);
+
 exports.always = always;
 exports.repeatedly = repeatedly;
 exports.invoker = invoker;
+exports.isEven = isEven;
+exports.isOdd = isOdd;
