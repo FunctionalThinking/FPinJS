@@ -3,7 +3,7 @@ chapter 6: recursion
 */
 
 var _ = require('lodash'),
-    isEven = require('../util/chapter6').isEven;
+    isEven = require('../util/chapter3').isEven;
 
 function andify() {
     var preds = _.toArray(arguments);

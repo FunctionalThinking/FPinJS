@@ -1,5 +1,9 @@
+/*
+chapter 2:
+*/
+
 var _ = require('lodash'),
-	existy = require('./chapter1').existy;
+	existy = require('../chapter1/existy').existy;
 
 function cat() {
 	var head = _.first(arguments);
@@ -9,9 +13,4 @@ function cat() {
 		return [];
 }
 
-function construct(head, tail) {
-	return cat([head], _.toArray(tail));
-}
-
-exports.cat = cat;
-exports.construct = construct;
+exports.cat =  cat;

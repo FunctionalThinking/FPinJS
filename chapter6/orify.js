@@ -3,9 +3,8 @@ chapter 6: recursion
 */
 
 var _ = require('lodash'),
-    isEven = require('../util/chapter6').isEven
-    isOdd = require('../util/chapter6').isOdd
-    zero = require('../util/chapter6').zero;
+    isEven = require('../util/chapter3').isEven,
+    isOdd = require('../util/chapter3').isOdd;
 
 function orify() {
     var preds = _.toArray(arguments);
@@ -20,6 +19,8 @@ function orify() {
         return something(preds, false);
     };
 }
+
+function zero(n) { return n === 0; };
 
 var zroOrOdd = orify(isOdd, zero);
 

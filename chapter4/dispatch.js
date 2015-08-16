@@ -145,3 +145,12 @@ var performTrialUserCommand = dispatch(
 
 performTrialUserCommand({type: 'join', target: 'foo'});
 performTrialUserCommand({type: 'notify', message: 'Hi new user'});
+
+// str
+var str = dispatch(
+	invoker('toString', Array.prototype.toString),
+	invoker('toString', String.prototype.toString)
+);
+
+exports.dispatch = dispatch;
+exports.str = str;

@@ -1,15 +1,18 @@
+/*
+chapter 1:
+*/
 function existy(x) { return x != null };
 
-existy(null);
+// console.log(existy(null));
 //=> false
 
-existy(undefined);
+// console.log(existy(undefined));
 //=> false
 
-existy({}.notHere);
+// console.log(existy({}.notHere));
 //=> false
 
-existy((function() {})());
+// console.log(existy((function() {})()));
 //=> false
 
 exports.existy = existy;
