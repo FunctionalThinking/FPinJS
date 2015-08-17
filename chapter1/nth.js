@@ -16,14 +16,16 @@ function nth(a, index) {
 	return a[index];
 }
 
-nth(letters, 1);
+// console.log(nth(letters, 1));
 //=> 'b'
 
-nth("abc", 0);
+// console.log(nth("abc", 0));
 //=> 'a'
 
-nth({}, 2);
+// console.log(nth({}, 2));
 // Error: Not supported on non-indexed type
 
-nth(letters, 4000);
+// console.log(nth(letters, 4000));
 // Error: Index value is out of bounds
+
+exports.nth = nth;

@@ -3,6 +3,7 @@ chapter 6: recursion
 */
 
 var _ = require('lodash'),
+	second = require('../chapter1/second'),
 	postDepth = require('./postDepth').postDepth;
 
 var influences = [
@@ -26,4 +27,4 @@ function influencesWithStrategy(strategy, lang, graph) {
 	return results;
 }
 
-influencesWithStrategy(postDepth, "Lisp", influences);
+// console.log(influencesWithStrategy(postDepth, "Lisp", influences));

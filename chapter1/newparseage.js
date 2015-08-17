@@ -27,7 +27,7 @@ function parseAge(age) {
 	return a;
 }
 
-parseAge("frob");
+// parseAge("frob");
 // (console) NOTE: Attempting to parse an age
 // (console) WARNING: Could not parse age: frob
 //=> 0

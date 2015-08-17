@@ -21,11 +21,11 @@ function andify() {
 
 var evenNums = andify(_.isNumber, isEven);
 
-console.log(evenNums(1, 2));
+// console.log(evenNums(1, 2));
 //=> false
 
-console.log(evenNums(2, 4, 6, 8));
+// console.log(evenNums(2, 4, 6, 8));
 //=> true
 
-console.log(evenNums(2, 4, 6, 8, 9));
+// console.log(evenNums(2, 4, 6, 8, 9));
 //=> false

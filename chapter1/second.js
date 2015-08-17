@@ -4,11 +4,13 @@ function second(a) {
 	return nth(a, 1);
 }
 
-second(['a', 'b']);
+// console.log(second(['a', 'b']));
 //=> 'b'
 
-second("fogus");
+// console.log(second("fogus"));
 //=> 'o'
 
-second({});
+// console.log(second({}));
 //=> Error: Not supported on non-indexed type
+
+module.exports = second;

@@ -37,6 +37,8 @@ function songToString(song) {
 var songCount = curry2(_.countBy)(songToString)
 var countResult = songCount(plays)
 
-console.log(countResult)
+// console.log(countResult)
 // => {"Ben Frost - Stomp": 2, 
 //     "Burial - Archangel": 2}
+
+exports.curry2 = curry2;

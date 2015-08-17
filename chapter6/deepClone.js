@@ -22,10 +22,10 @@ var x = [{a: [1, 2, 3], b: 42, {c: {d: []}}}];
 
 var y = deepClone(x);
 
-console.log(_.isEqual(x, y));
+// console.log(_.isEqual(x, y));
 //=> true
 
 y[1]['c']['d'] = 42;
 
-console.log(_.isEqual(x, y));
+// console.log(_.isEqual(x, y));
 //=> false

@@ -19,18 +19,18 @@ var influences = [
 	['Self', 'Lua'],
 	['Self', 'JavaScript']];
 
-console.log(postDepth(_.identity, influences));
+// console.log(postDepth(_.identity, influences));
 //=> [['Lisp', 'Smalltalk'], ['Lisp', 'Scheme'], ...]
 
-console.log(postDepth(function(x) {
-	if (x === 'Lisp')
-		return "LISP";
-	else
-		return x;
-}, influences));
+// console.log(postDepth(function(x) {
+// 	if (x === 'Lisp')
+// 		return "LISP";
+// 	else
+// 		return x;
+// }, influences));
 //=> [['LISP', 'Smalltalk'], ['LISP', 'Scheme'], ...]
 
-console.log(influences);
+// console.log(influences);
 //=> [['Lisp', 'Smalltalk'], ['Lisp', 'Scheme'], ...]
 
 exports.postDepth = postDepth;
