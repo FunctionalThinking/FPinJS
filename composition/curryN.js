@@ -1,5 +1,5 @@
 /*
-Chapter3: Currying
+Function Bulding Functions
 */
 
 var _ = require('lodash');
@@ -26,8 +26,10 @@ var curryC = curryN(add)
 var curryB = curryC(5)
 var curryA = curryB(3)
 
-console.log(curryA(1))
+curryA(1);
 // => 9
 
-console.log(curryA(2))
+curryA(2);
 // => 10
+
+exports.curryN = curryN;

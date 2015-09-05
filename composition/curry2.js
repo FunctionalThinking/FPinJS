@@ -1,5 +1,5 @@
 /*
-Chapter3: Currying
+Function Bulding Functions
 */
 
 var _ = require('lodash')
@@ -12,6 +12,14 @@ function curry2(fn) {
   }
 }
 
+function div(n, d) {
+    return n / d;
+}
+
+var div10 = curry2(div)(10);
+div10(50);
+//=> 5
+
 var plays = [
 {artist: "Burial",    track: "Archangel"},
 {artist: "Ben Frost", track: "Stomp"},
@@ -19,26 +27,27 @@ var plays = [
 {artist: "Burial",    track: "Archangel"}
 ]
 
-/*
+
 var countResult = _.countBy(plays, function(song) {
   return [song.artist, song.track].join('-')
 })
 
 
-console.log(countResult)
+countResult;
 // => {"Ben Frost - Stomp": 2,
 //     "Burial - Archangel": 2}
-*/
+
 
 function songToString(song) {
-  return [song.artist, song.track].join('-')
+  return [song.artist, song.track].join('-');
 }
 
-var songCount = curry2(_.countBy)(songToString)
-var countResult = songCount(plays)
+var songCount = curry2(_.countBy)(songToString);
+var countResult = songCount(plays);
 
-// console.log(countResult)
+countResult;
 // => {"Ben Frost - Stomp": 2, 
 //     "Burial - Archangel": 2}
 
 exports.curry2 = curry2;
+exports.div = div;

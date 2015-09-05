@@ -1,9 +1,10 @@
 /*
-chapter 5: function building functions
+Function Bulding Functions
 */
 
 var _ = require('lodash'),
-	construct = require('../chapter2/construct').construct;
+	construct = require('../first-class/construct').construct
+    div = require('./curry2').div;
 
 function partial1(fun, arg1) {
 	return function() {
@@ -12,8 +13,8 @@ function partial1(fun, arg1) {
 	}
 }
 
-// var over10Part1 = partial1(div, 10);
-// console.log(over1-Part1(5));
+var over10Part1 = partial1(div, 10);
+over10Part1(5);
 //=> 2
 
 exports.partial1 = partial1;

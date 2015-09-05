@@ -1,5 +1,5 @@
 /*
-Chapter3: Partial Application
+Function Bulding Functions
 */
 
 var _ = require('lodash')
@@ -11,9 +11,9 @@ function partial2(fn, a, b) {
   }
 }
 
-var curry3 = require('./curry3');
+var rgbToHexStr = require('./curry3').rgbToHexStr;
 
-var blueGreenish = partial2(curry3.rgbToHexStr, 255, 200);
+var blueGreenish = partial2(rgbToHexStr, 255, 200);
 
 blueGreenish(0);
 //=> '#00c8ff'

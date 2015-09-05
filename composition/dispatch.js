@@ -1,48 +1,15 @@
-var _ = require('lodash');
+/*
+Function Bulding Functions
+*/
 
-function existy(x) { return x != null };
-function truthy(x) { return (x !== false) && existy(x) };
-
-function cat() {
-	var head = _.first(arguments);
-	if (existy(head)) {
-		return head.concat.apply(head, _.rest(arguments));
-	} else {
-		return [];
-	}
-}
-
-function construct(head, tail) {
-	return cat([head], _.toArray(tail));
-}
-
-function doWhen(cond, action) {
-	if (truthy(cond)) {
-		return action();
-	} else {
-		return undefined;
-	}
-}
-
-function always(VALUE) {
-	return function() {
-		return VALUE;
-	};
-}
-
-function invoker(NAME, METHOD) {
-	return function(target) {
-		if (!existy(target)) fail("Must provide a target");
-		var targetMethod = target[NAME];
-		var args = _.rest(arguments);
-
-		return doWhen((existy(targetMethod) && METHOD === targetMethod), function() {
-			return targetMethod.apply(target, args);
-		});
-	};
-};
-
-// chapter 5
+var _ 		= require('lodash'),
+	existy 	= require('../introduction/existy').existy,
+	truthy 	= require('../introduction/truthy').truthy,
+	doWhen 	= require('../introduction/doWhen').doWhen,
+	cat 	= require('../first-class/cat').cat
+	construct = require('../first-class/construct').construct,
+	always 	= require('../hof/always').always,
+	invoker = require('../hof/invoker').invoker;
 
 function dispatch() {
 	var funs = _.toArray(arguments);
@@ -65,25 +32,25 @@ function dispatch() {
 var str = dispatch(invoker('toString', Array.prototype.toString),
 	invoker('toString', String.prototype.toString));
 
-console.log(str("a"));
-console.log(str(_.range(10)));
+str("a");
+str(_.range(10));
 
 function stringReverse(s) {
 	if (!_.isString(s)) return undefined;
 	return s.split('').reverse().join("");
 }
 
-console.log(stringReverse("abc"));
-console.log(stringReverse(1));
+stringReverse("abc");
+stringReverse(1);
 
 var rev = dispatch(invoker('reverse', Array.prototype.reverse), stringReverse);
-console.log(rev([1, 2, 3]));
-console.log(rev("abc"));
+rev([1, 2, 3]);
+rev("abc");
 
 var sillyReverse = dispatch(rev, always(42));
-console.log(sillyReverse([1, 2, 3]));
-console.log(sillyReverse("abc"));
-console.log(sillyReverse(100000));
+sillyReverse([1, 2, 3]);
+sillyReverse("abc");
+sillyReverse(100000);
 
 /*
 function performCommandHardcoded(command) {

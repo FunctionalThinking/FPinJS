@@ -1,5 +1,5 @@
 /*
-Chapter3: Partial Application
+Function Bulding Functions
 */
 
 var _ = require('lodash')
@@ -17,7 +17,7 @@ function div(a, b) {
 }
 
 var div10By2 = partialN(div, 10, 2)
-console.log(div10By2())
+div10By2();
 //=> 5
 
 var curry3 = require('./curry3');

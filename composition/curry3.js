@@ -1,5 +1,5 @@
 /*
-Chapter3: Currying
+Function Bulding Functions
 */
 
 function curry3(fun) {
@@ -24,7 +24,9 @@ function rgbToHexStr(r, g, b) {
 
 var blueGreenish = curry3(rgbToHexStr)(255)(200);
 
-console.log(blueGreenish(0));
+blueGreenish(0);
 //=> '#00c8ff'
 
+exports.toHex = toHex;
 exports.rgbToHexStr = rgbToHexStr;
+exports.curry3 = curry3;

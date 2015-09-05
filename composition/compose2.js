@@ -1,5 +1,5 @@
 /*
-Chapter3: Function Composition
+Function Bulding Functions
 */
 
 var _ = require('lodash')
@@ -13,7 +13,7 @@ function compose(fn1, fn2) {
 function not(x) { return !x }
 var isntString = compose(not, _.isString)
 
-console.log(isntString(10))
+isntString(10);
 //=> true
-console.log(isntString("String"))
+isntString("String");
 //=> false

@@ -1,5 +1,5 @@
 /*
-Chapter3: Functiona Composition
+Function Bulding Functions
 */
 
 /*
@@ -15,27 +15,27 @@ function composeN() {
 var _ = require('lodash')
 
 function composeN() {
-  var fs = _.toArray(arguments).reverse()
+  var fs = _.toArray(arguments).reverse();
   return function() {
     var result = fs[0].apply(null, arguments)
     for (var i=1; i < fs.length; ++i) {
-      result = fs[i](result)
+      result = fs[i](result);
     }
-    return result
+    return result;
   }
 }
 
 
-var partialN = require('./partialN')
+var partialN = require('./partialN');
 
 function add(x, y) { return x + y }
 function mul(x, y) { return x * y }
 function div(x, y) { return x / y }
 
-var add3Mul4 = composeN(partialN(mul, 4), partialN(add, 3))
-var add3Mul4Div10 = composeN(partialN(div, 10), add3Mul4)
+var add3Mul4 = composeN(partialN(mul, 4), partialN(add, 3));
+var add3Mul4Div10 = composeN(partialN(div, 10), add3Mul4);
 
-console.log(add3Mul4(2))
+add3Mul4(2);
 //=> 20
-console.log(add3Mul4Div10(2))
+add3Mul4Div10(2);
 //=> 0.5
