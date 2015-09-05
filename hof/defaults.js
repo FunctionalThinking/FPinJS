@@ -1,3 +1,7 @@
+/*
+Higher-Order Functions
+*/
+
 var _ = require('lodash'),
 	fnull = require('./fnull').fnull;
 
@@ -13,12 +17,16 @@ function doSomething(config) {
 }
 
 doSomething({critical: 9});
+//=> 9
+
 doSomething({});
-// console.log(doSomething({critical: 9}));
-// console.log(doSomething({}));
+//=> 108
 
 var lookup = defaults({critical: 9, normal: 100});
 lookup({normal: 100}, 'critical');
+//=> 9
+
 lookup({}, 'normal');
-// console.log(lookup({normal: 100}, 'critical'));
-// console.log(lookup({}, 'normal'));
+//=> 100
+
+exports.defaults = defaults;

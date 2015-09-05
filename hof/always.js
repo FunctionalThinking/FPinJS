@@ -1,3 +1,7 @@
+/*
+Higher-Order Functions
+*/
+
 var repeatedly = require('./repeatedly').repeatedly;
 
 function always(VALUE) {
@@ -16,3 +20,5 @@ f() === g();
 
 repeatedly(3, always("Odelay!"));
 //=> ["Odelay!", "Odelay!", "Odelay!"]
+
+exports.always = always;

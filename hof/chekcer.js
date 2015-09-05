@@ -1,11 +1,9 @@
-var _ = require('lodash');
-// var always = require('./invoker');
+/*
+Higher-Order Functions
+*/
 
-function always(VALUE) {
-	return function() {
-		return VALUE;
-	}
-}
+var _ = require('lodash'),
+	always = require('./always').always;
 
 function checker() {
 	var validators = _.toArray(arguments);
@@ -19,14 +17,14 @@ function checker() {
 }
 
 var alwaysPasses = checker(always(true), always(true));
-console.log(alwaysPasses({}));
+alwaysPasses({});
 //=> []
 
 var fails = always(false);
 fails.message = "a failure in life";
 var alwaysFails = checker(fails);
 alwaysFails = checker(fails)
-console.log(alwaysFails({}));
+alwaysFails({});
 //=> ["a failure in life"]
 
 function validator(message, fun) {
@@ -39,7 +37,7 @@ function validator(message, fun) {
 }
 
 var gonnaFail = checker(validator("ZOMG!", always(false)));
-console.log(gonnaFail(100));
+gonnaFail(100);
 //=> ["ZOMG!"]
 
 function aMap(obj) {
@@ -69,11 +67,13 @@ function hasKeys() {
 var checkCommand = checker(	validator("must be a map", aMap),
 	hasKeys('msg', 'type'));
 
-console.log(checkCommand({msg: 'blah', type: 'display'}));
+checkCommand({msg: 'blah', type: 'display'});
 //=> []
-console.log(checkCommand(32));
+checkCommand(32);
 //=> ["must be a map", "Must have values for keys: mst type"]
-console.log(checkCommand({}));
+checkCommand({});
 //=> ["Must have values for keys: msg type"]
 
-
+exports.checker = checker;
+exports.validator = validator;
+exports.hasKeys = hasKeys;

@@ -1,5 +1,10 @@
+/*
+Higher-Order Functions
+*/
+
 var _ = require('lodash'),
-	existy = require('./util/chapter1').existy;
+	existy = require('../introduction/existy').existy,
+    doWhen = require('../introduction/doWhen').doWhen;
 
 function invoker(NAME, METHOD) {
 	return function(target) {
@@ -18,4 +23,4 @@ var rev = invoker('reverse', Array.prototype.reverse);
 _.map([[1, 2, 3]], rev);
 //=> [[3, 2, 1]]
 
-exports.always = always;
+exports.invoker = invoker;

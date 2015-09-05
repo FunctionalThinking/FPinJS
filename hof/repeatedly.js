@@ -1,3 +1,7 @@
+/*
+Higher-Order Functions
+*/
+
 var _ = require('lodash');
 
 function repeatedly(times, fun) {
@@ -14,8 +18,10 @@ repeatedly(3, function() { return "Odelay!"; });
 
 repeatedly(3, function(n) {
 	var id = 'id' + n;
-	$('body').append($("<p>Odelay!</p>").attr('id', id));
+	// $('body').append($("<p>Odelay!</p>").attr('id', id));
 	return id;
 });
 // Page now has three odelays
 //=> ["id0", "id1", "id2"]
+
+exports.repeatedly = repeatedly;
