@@ -1,3 +1,7 @@
+/*
+Introducing Functional Javascript
+*/
+
 var letters = ['a', 'b', 'c'];
 
 letters[1];

@@ -1,3 +1,7 @@
+/*
+Introducing Functional Javascript
+*/
+
 var _ = require('lodash');
 
 function fail(thing) {
@@ -27,14 +31,15 @@ function parseAge(age) {
 	return a;
 }
 
-// parseAge("frob");
+parseAge("frob");
 // (console) NOTE: Attempting to parse an age
 // (console) WARNING: Could not parse age: frob
 //=> 0
 
 // function note() {}
 // function warn(str) {
-// 	alert("That doesn't look like a valid age");
+	// alert("That doesn't look like a valid age");
+	// console.log("That doesn't look like a valid age");
 // }
 
 // parseAge("frob");

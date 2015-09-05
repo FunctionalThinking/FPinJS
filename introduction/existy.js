@@ -1,18 +1,19 @@
 /*
-chapter 1:
+Introducing Functional Javascript
 */
+
 function existy(x) { return x != null };
 
-// console.log(existy(null));
+existy(null);
 //=> false
 
-// console.log(existy(undefined));
+existy(undefined);
 //=> false
 
-// console.log(existy({}.notHere));
+existy({}.notHere);
 //=> false
 
-// console.log(existy((function() {})()));
+existy((function() {})());
 //=> false
 
 exports.existy = existy;

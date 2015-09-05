@@ -1,3 +1,7 @@
+/*
+Introducing Functional Javascript
+*/
+
 var _ = require('lodash'),
 	fail = require('./newparseage').fail;
 
@@ -16,16 +20,16 @@ function nth(a, index) {
 	return a[index];
 }
 
-// console.log(nth(letters, 1));
+nth(letters, 1);
 //=> 'b'
 
-// console.log(nth("abc", 0));
+nth("abc", 0);
 //=> 'a'
 
-// console.log(nth({}, 2));
+// nth({}, 2);
 // Error: Not supported on non-indexed type
 
-// console.log(nth(letters, 4000));
+// nth(letters, 4000);
 // Error: Index value is out of bounds
 
 exports.nth = nth;

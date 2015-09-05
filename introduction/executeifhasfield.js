@@ -1,3 +1,7 @@
+/*
+Introducing Functional Javascript
+*/
+
 var _ = require('lodash'),
 	truthy = require('./truthy').truthy,
 	existy = require('./existy').existy;

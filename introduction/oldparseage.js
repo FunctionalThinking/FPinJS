@@ -1,3 +1,7 @@
+/*
+Introducing Functional Javascript
+*/
+
 var _ = require('lodash');
 
 function parseAge(age) {
