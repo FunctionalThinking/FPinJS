@@ -1,10 +1,10 @@
 /*
-chapter 6: recursion
+Recursion
 */
 
 var _ = require('lodash'),
-    isEven = require('../util/chapter3').isEven,
-    isOdd = require('../util/chapter3').isOdd;
+    isEven = require('../scope/complement').isEven,
+    isOdd = require('../scope/complement').isOdd;
 
 function orify() {
     var preds = _.toArray(arguments);
@@ -24,11 +24,11 @@ function zero(n) { return n === 0; };
 
 var zroOrOdd = orify(isOdd, zero);
 
-console.log(zroOrOdd());
+zroOrOdd();
 //=> false
 
-console.log(zroOrOdd(0, 2, 4, 6));
+zroOrOdd(0, 2, 4, 6);
 //=> true
 
-console.log(zroOrOdd(2, 4, 6));
+zroOrOdd(2, 4, 6);
 //=> false

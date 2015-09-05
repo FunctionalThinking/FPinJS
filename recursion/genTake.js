@@ -1,5 +1,5 @@
 /*
-chapter 6: recursion
+Recursion
 */
 
 var _ = require('lodash'),
@@ -8,7 +8,7 @@ var _ = require('lodash'),
     ints = require('./generator').ints,
     genHead = require('./generator').genHead,
     genTail = require('./generator').genTail,
-    cat = require('../chapter2/cat').cat;
+    cat = require('../first-class/cat').cat;
 
 function genTake(n, gen) {
     var doTake = function(x, g, ret) {
@@ -20,27 +20,27 @@ function genTake(n, gen) {
     return trampoline(doTake, n, gen, []);
 }
 
-// console.log(genTake(10, ints));
+genTake(10, ints);
 //=> (console) forced * 10
 //=> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-// console.log(genTake(100, ints));
+genTake(100, ints);
 //=> (console) forced * 100
 //=> [0, 1, 2, 3, ..., 99]
 
-// console.log(genTake(1000, ints));
+genTake(1000, ints);
 //=> (console) forced * 1000
 //=> Array[1000]
 
-// console.log(genTake(10000, ints));
+genTake(10000, ints);
 //=> (console) forced * 10000
 //=> Array[10000]
 
-// console.log(genTake(100000, ints));
+genTake(100000, ints);
 //=> (console) forced * 100000
 //=> Array[100000]
 
-// console.log(genTake(1000000, ints));
+genTake(1000000, ints);
 // it takes many hours to complete computation
 //=> (console) forced * 1000000
 //=> Array[1000000]

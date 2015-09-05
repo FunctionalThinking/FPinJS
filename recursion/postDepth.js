@@ -1,10 +1,10 @@
 /*
-chapter 6: recursion
+Recursion
 */
 
 var _ = require('lodash'),
 	visit = require('./visit').visit,
-	partial1 = require('../chapter4/partial1').partial1;
+	partial1 = require('../composition/partial1').partial1;
 
 function postDepth(fun, ary) {
 	return visit(partial1(postDepth, fun), fun, ary);
@@ -19,18 +19,18 @@ var influences = [
 	['Self', 'Lua'],
 	['Self', 'JavaScript']];
 
-// console.log(postDepth(_.identity, influences));
+postDepth(_.identity, influences);
 //=> [['Lisp', 'Smalltalk'], ['Lisp', 'Scheme'], ...]
 
-// console.log(postDepth(function(x) {
-// 	if (x === 'Lisp')
-// 		return "LISP";
-// 	else
-// 		return x;
-// }, influences));
+postDepth(function(x) {
+	if (x === 'Lisp')
+		return "LISP";
+	else
+		return x;
+}, influences);
 //=> [['LISP', 'Smalltalk'], ['LISP', 'Scheme'], ...]
 
-// console.log(influences);
+influences;
 //=> [['Lisp', 'Smalltalk'], ['Lisp', 'Scheme'], ...]
 
 exports.postDepth = postDepth;

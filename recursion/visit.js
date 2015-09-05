@@ -1,8 +1,9 @@
 /*
-chapter 6: recursion
+Recursion
 */
 
-var _ = require('lodash');
+var _ = require('lodash'),
+    rev = require('../composition/dispatch').rev;
 
 function visit(mapFun, resultFun, array) {
 	if (_.isArray(array))
@@ -11,13 +12,13 @@ function visit(mapFun, resultFun, array) {
 		return resultFun(array);
 }
 
-// console.log(visit(_.identity, _.isNumber, 42));
+visit(_.identity, _.isNumber, 42);
 //=> 42
 
-// console.log(visit(_.isNumber, _.identity, [1, 2, null, 3]);
+visit(_.isNumber, _.identity, [1, 2, null, 3]);
 //=> [true, true, false, true]
 
-// console.log(visit(function(n) { return n*2; }, rev, _.range(10));
+visit(function(n) { return n*2; }, rev, _.range(10));
 //=> [18, 16, 14, 12, 10, 8, 6, 4, 2, 0]
 
 exports.visit = visit;

@@ -121,3 +121,4 @@ var str = dispatch(
 
 exports.dispatch = dispatch;
 exports.str = str;
+exports.rev = rev;

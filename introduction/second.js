@@ -17,4 +17,4 @@ second("fogus");
 // second({});
 //=> Error: Not supported on non-indexed type
 
-module.exports = second;
+exports.second = second;

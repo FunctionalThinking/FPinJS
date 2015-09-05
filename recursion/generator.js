@@ -1,5 +1,5 @@
 /*
-chapter 6: recursion
+Recursion
 */
 
 var _ = require('lodash');
@@ -19,14 +19,14 @@ function genTail(gen) { return gen.tail() }
 
 var ints = generator(0, _.identity, function (n) { return n + 1 });
 
-// console.log(genHead(ints));
+genHead(ints);
 //=> 0
 
-// console.log(genTail(ints));
+genTail(ints);
 //=> (console) forced
 //=> {head: 1, tail: [Function]}
 
-// console.log(genTail(genTail(ints)));
+genTail(genTail(ints));
 //=> (console) forced
 //=> (console) forced
 //=> {head: 2, tail: [Function]}

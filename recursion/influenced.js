@@ -1,10 +1,10 @@
 /*
-chapter 6: recursion
+Recursion
 */
 
 var _ = require('lodash'),
-    curry2 = require('../chapter4/curry2').curry2,
-    second = require('../chapter1/second');
+    curry2 = require('../composition/curry2').curry2,
+    second = require('../introduction/second').second;
 
 var influences = [
     ['Lisp', 'Smalltalk'],
@@ -18,13 +18,13 @@ var influences = [
 var groupFrom   = curry2(_.groupBy)(_.first);
 var groupTo     = curry2(_.groupBy)(second);
 
-// console.log(groupFrom(influences));
+groupFrom(influences);
 //=>    {Lisp: [["Lisp", "Smalltalk"], ["Lisp, "Scheme"]],
 //       Smalltalk: [["Smalltalk", "Self"]],
 //       Scheme: [["Scheme", "JavaScript"], ["Scheme", "Lua"]],
 //       Self: [["Self", "Lua"], ["Self", "JavaScript"]]}
 
-// console.log(groupTo(influences));
+groupTo(influences);
 //=>    {Smalltalk: [["Lisp", "Smalltalk"]],
 //       Scheme: [["Lisp", "Scheme"]],
 //       Self: [["Smalltalk", "Self"]],

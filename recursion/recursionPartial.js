@@ -1,9 +1,9 @@
 /*
-chapter 6: trampoline
+Recursion
 */
 
 var _ = require('lodash'),
-	partial1 = require('../chapter4/partial1').partial1;
+	partial1 = require('../composition/partial1').partial1;
 
 function evenOline(n) {
 	if (n === 0)
@@ -19,22 +19,22 @@ function oddOline(n) {
 		return partial1(oddOline, Math.abs(n) - 1);
 }
 
-// console.log(evenOline(0));
+evenOline(0);
 //=> true
 
-// console.log(oddOline(0));
+oddOline(0);
 //=> false
 
-// console.log(oddOline(3));
+oddOline(3);
 //=> function () { return evenOline(Math.abs(n) - 1); }
 
-// console.log(oddOline(3)());
+oddOline(3)();
 //=> function () { return oddOline(Math.abs(n) - 1); }
 
-// console.log(oddOline(3)()());
+oddOline(3)()();
 //=> function () { return evenOline(Math.abs(n) - 1); }
 
-// console.log(oddOline(3)()()());
+oddOline(3)()()();
 //=> true
 
 // oddOline(20000001)()()(); //... a bunch more ()s
