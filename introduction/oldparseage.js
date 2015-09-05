@@ -15,7 +15,7 @@ function parseAge(age) {
 	return a;
 }
 
-console.log(parseAge("42"));
+parseAge("42");
 // (console) Attempting to parse an age
 //=> 42
 
