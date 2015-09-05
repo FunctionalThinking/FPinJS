@@ -1,9 +1,9 @@
 /*
-chapter 6: recursion
+Recursion
 */
 
 var _ = require('lodash'),
-    isEven = require('../util/chapter3').isEven;
+    isEven = require('../scope/complement').isEven;
 
 function andify() {
     var preds = _.toArray(arguments);
@@ -21,11 +21,11 @@ function andify() {
 
 var evenNums = andify(_.isNumber, isEven);
 
-// console.log(evenNums(1, 2));
+evenNums(1, 2);
 //=> false
 
-// console.log(evenNums(2, 4, 6, 8));
+evenNums(2, 4, 6, 8);
 //=> true
 
-// console.log(evenNums(2, 4, 6, 8, 9));
+evenNums(2, 4, 6, 8, 9);
 //=> false

@@ -1,9 +1,9 @@
 /*
-chapter 6. recursion
+Recursion
 */
 
 var _ = require('lodash')
-    cat = require('../chapter2/cat').cat;
+    cat = require('../first-class/cat').cat;
 
 function evenSteven(n) {
     if (n === 0)
@@ -19,12 +19,10 @@ function oddJohn(n) {
         return evenSteven(Math.abs(n) - 1);
 }
 
-// console.log("1. evenSteven-oddJohn:");
-
-// console.log(evenSteven(4));
+evenSteven(4);
 //=> true
 
-// console.log(oddJohn(11));
+oddJohn(11);
 //=> true
 
 function flat(array) {
@@ -34,10 +32,8 @@ function flat(array) {
         return [array];
 }
 
-// console.log("2. flat:");
-
-// console.log(flat([1, 2], [3, 4]));
+flat([1, 2], [3, 4]);
 //=> [1, 2, 3, 4]
 
-// console.log(flat([[1, 2], [3, 4, [5, 6, [[[7]]], 8]]]));
+flat([[1, 2], [3, 4, [5, 6, [[[7]]], 8]]]);
 //=> [1, 2, 3, 4, 5, 6, 7, 8]

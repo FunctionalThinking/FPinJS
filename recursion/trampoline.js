@@ -1,10 +1,10 @@
 /*
-chapter 6: recursion
+Recursion
 */
 
 var _ = require('lodash'),
-	evenOline = require('./recursion_partial').evenOline,
-	oddOline = require('./recursion_partial').oddOline;
+	evenOline = require('./recursionPartial').evenOline,
+	oddOline = require('./recursionPartial').oddOline;
 
 function trampoline(fun) {
 	var result = fun.apply(fun, _.rest(arguments));
@@ -16,16 +16,16 @@ function trampoline(fun) {
 	return result;
 }
 
-// console.log(trampoline(oddOline, 3));
+trampoline(oddOline, 3);
 //=> true
 
-// console.log(trampoline(evenOline, 200000));
+trampoline(evenOline, 200000);
 //=> true
 
-// console.log(trampoline(oddOline, 300000));
+trampoline(oddOline, 300000);
 //=> false
 
-// console.log(trampoline(evenOline, 200000000));
+trampoline(evenOline, 200000000);
 //=> true
 
 exports.trampoline = trampoline;

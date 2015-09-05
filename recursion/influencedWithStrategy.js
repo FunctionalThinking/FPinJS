@@ -1,9 +1,9 @@
 /*
-chapter 6: recursion
+Recursion
 */
 
 var _ = require('lodash'),
-	second = require('../chapter1/second'),
+	second = require('../introduction/second').second,
 	postDepth = require('./postDepth').postDepth;
 
 var influences = [
@@ -27,4 +27,4 @@ function influencedWithStrategy(strategy, lang, graph) {
 	return results;
 }
 
-// console.log(influencesWithStrategy(postDepth, "Lisp", influences));
+influencedWithStrategy(postDepth, "Lisp", influences);
