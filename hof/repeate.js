@@ -1,3 +1,7 @@
+/*
+Higher-Order Functions
+*/
+
 var _ = require('lodash');
 
 function repeat(times, VALUE) {

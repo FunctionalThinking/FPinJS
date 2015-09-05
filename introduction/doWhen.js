@@ -1,3 +1,7 @@
+/*
+Introducing Functional Javascript
+*/
+
 var truthy = require('./truthy').truthy;
 
 function doWhen(cond, action) {
