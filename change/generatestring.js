@@ -1,6 +1,10 @@
+/*
+Purity, immutability and policies for change
+*/
+
 var _ = require('lodash'),
 	rand = require('./rand').rand,
-	repeatedly = require('../util/chapter5').repeatedly;
+	repeatedly = require('../hof/repeatedly').repeatedly;
 
 function generateRandomCharacter() {
 	return rand(26).toString(36);
@@ -10,13 +14,12 @@ function generateString(charGen, len) {
 	return repeatedly(len, charGen).join('');
 }
 
-var result1 = generateString(generateRandomCharacter, 20);
+generateString(generateRandomCharacter, 20);
+//=> "21hfjo45n2nfnpbf7m7e"
 
 var composedRandomString = _.partial(generateString, generateRandomCharacter);
-var result2 = composedRandomString(10);
-
-// console.log(result1);
-// console.log(result2);
+composedRandomString(10);
+//=> "j18obij1jc"
 
 exports.generateRandomCharacter = generateRandomCharacter;
 exports.generateString = generateString;

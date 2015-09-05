@@ -1,5 +1,9 @@
+/*
+Purity, immutability and policies for change
+*/
+
 var _ = require('lodash'),
-	repeatedly = require('../util/chapter5').repeatedly,
+	repeatedly = require('../hof/repeatedly').repeatedly,
 	rand = require('./rand').rand;
 
 var freq = _.curryRight(_.countBy)(_.identity)(null);
@@ -8,8 +12,7 @@ var copy = _.clone(a);
 
 
 freq(a);
-// console.log(freq(a));
+//=> {1: 498, 2: 502}
 
 _.isEqual(a, copy);
-// console.log(_.isEqual(a, copy));
 //=> true

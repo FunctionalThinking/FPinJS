@@ -1,6 +1,6 @@
 var _ = require('lodash'),
 	assert = require('assert'),
-	repeatedly = require('../../util/chapter5').repeatedly,
+	repeatedly = require('../../hof/repeatedly').repeatedly,
 	generateRandomCharacter = require('../generatestring').generateRandomCharacter;
 
 describe("generateRandomCharacter", function() {
