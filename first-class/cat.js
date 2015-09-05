@@ -1,9 +1,9 @@
 /*
-chapter 2:
+first-class functions and applicative programming
 */
 
 var _ = require('lodash'),
-	existy = require('../chapter1/existy').existy;
+	existy = require('../introduction/existy').existy;
 
 function cat() {
 	var head = _.first(arguments);

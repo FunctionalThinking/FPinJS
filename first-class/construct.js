@@ -1,5 +1,5 @@
 /*
-chapter 2:
+first-class functions and applicative programming
 */
 
 var _ = require('lodash'),
