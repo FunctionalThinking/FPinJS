@@ -1,3 +1,7 @@
+/*
+Variable Scope and Closures
+*/
+
 var _ = require('lodash');
 
 function createScaleFunction(FACTOR) {
@@ -11,5 +15,4 @@ function createScaleFunction(FACTOR) {
 var scale10 = createScaleFunction(10);
 
 scale10([1, 2, 3]);
-// console.log(scale10([1, 2, 3]));
 //=> [10, 20, 30]

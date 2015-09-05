@@ -1,3 +1,7 @@
+/*
+Variable Scope and Closures
+*/
+
 var _ = require('lodash');
 
 aVariable = "Outer";
@@ -11,5 +15,4 @@ function aFun() {
 }
 
 aFun();
-console.log(aFun());
 //=> ["In 1", "In 2", "In 3"];

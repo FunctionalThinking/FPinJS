@@ -1,4 +1,8 @@
-var average = require('../util/chapter2').average;
+/*
+Variable Scope and Closures
+*/
+
+var average = require('../first-class/average').average;
 
 function averageDamp(FUN) {
 	return function(n) {
@@ -8,5 +12,4 @@ function averageDamp(FUN) {
 
 var averageSq = averageDamp(function(n) { return n * n; });
 averageSq(10);
-// console.log(averageSq(10));
 //=> 55

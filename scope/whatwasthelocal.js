@@ -1,3 +1,7 @@
+/*
+Variable Scope and Closures
+*/
+
 function whatWasTheLocal() {
 	var CAPTURED = "Oh hai";
 
@@ -9,5 +13,4 @@ function whatWasTheLocal() {
 var reportLocal = whatWasTheLocal();
 
 reportLocal();
-// console.log(reportLocal());
 //=> "The local was: Oh hai"

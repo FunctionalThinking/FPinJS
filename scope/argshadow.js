@@ -1,13 +1,15 @@
-var shdowed = 0;
+/*
+Variable Scope and Closures
+*/
 
-function argShdow(shdowed) {
-	return ["Value is", shdowed].join(' ');
+var shadowed = 0;
+
+function argShadow(shadowed) {
+	return ["Value is", shadowed].join(' ');
 }
 
-argShdow(108);
-// console.log(argShdow(108));
+argShadow(108);
 //=> "Value is 108";
 
-argShdow();
-// console.log(argShdow());
+argShadow();
 //=> "Value is "

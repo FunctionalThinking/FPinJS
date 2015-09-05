@@ -1,3 +1,7 @@
+/*
+Variable Scope and Closures
+*/
+
 var _ = require('lodash');
 
 function plucker(FIELD) {

@@ -1,3 +1,7 @@
+/*
+Variable Scope and Closures
+*/
+
 function captureShadow(SHADOWED) {
 	return function(SHADOWED) {
 		return SHADOWED + 1;
@@ -7,5 +11,4 @@ function captureShadow(SHADOWED) {
 var closureShadow = captureShadow(108);
 
 closureShadow(2);
-// console.log(closureShadow(2));
 //=> 3

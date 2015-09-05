@@ -1,3 +1,7 @@
+/*
+Variable Scope and Closures
+*/
+
 function shadowObject(OBJ) {
 	return function() {
 		return OBJ;
