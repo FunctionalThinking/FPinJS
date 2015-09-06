@@ -24,6 +24,8 @@ console.log('executed %d times', count)
 // => RangeError: Maximum call stack size exceeded
 ```
 
+## 문제
+
 아래 보일러플레이트 코드를 틀램펄린을 사용하도록 수정하라.
 
 repeat에 전달되는 함수는 인자를 받지 않는다고 가정하라. 반환 값은 중요하지 않다.
