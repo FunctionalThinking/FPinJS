@@ -1,3 +1,7 @@
+/*
+first-class functions and applicative programming
+*/
+
 var _ = require('lodash');
 
 _.each(['wiskey', 'tango', 'foxtrot'], function(word) {
