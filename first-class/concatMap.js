@@ -21,11 +21,13 @@ Array.prototype.concatMap = function(projectionFunctionThatReturnsArray) {
         concatAll();
 };
 
-var spanishFrenchEnglishWords = [ ["cero","rien","zero"], ["uno","un","one"], ["dos","deux","two"] ];
+var spanishFrenchEnglishWords = [
+    ["cero","rien","zero"], 
+    ["uno","un","one"], 
+    ["dos","deux","two"]];
+
 var allWords = [0,1,2].
     concatMap(function(index) {
         return spanishFrenchEnglishWords[index];
     });
-
-assert.deepEqual(allWords, 
-    ["cero","rien","zero","uno","un","one","dos","deux","two"]);
+//=> ["cero","rien","zero","uno","un","one","dos","deux","two"])
