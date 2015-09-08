@@ -9,7 +9,11 @@ var loremIpsum = [
 ];
 
 function getShortMessages(messages) {
-  // 해법은 여기에 작성
+    return messages.filter(function(item) {
+        return item.message.length < 50;
+    }).map(function(item) {
+        return item.message;
+    });
 }
 
 assert.deepEqual(getShortMessages(loremIpsum),

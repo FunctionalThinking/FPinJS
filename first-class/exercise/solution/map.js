@@ -9,7 +9,9 @@ var assert = require('assert');
 // }
 
 function doubleAll(numbers) {
-  // 해법은 여기에 작성
+  return numbers.map(function double(num) {
+    return num * 2;
+  });
 }
 
 assert.deepEqual(doubleAll([1]), [2]);
