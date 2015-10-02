@@ -1,3 +1,7 @@
+/*
+first-class functions and applicative programming
+*/
+
 var _ = require('lodash');
 
 function average(array) {
